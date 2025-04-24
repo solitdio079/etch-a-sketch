@@ -13,8 +13,13 @@ function drawGrid(gridSquareNumber){
         gridSquare.classList.add("square")
         gridSquare.style.width = ((containerWidth/gridSquareNumber)-2) +"px"
         gridSquare.style.height = ((containerWidth/gridSquareNumber)-2)+"px"
+        gridSquare.style.opacity = 0.1
         gridSquare.addEventListener("mouseenter", (e)=>{
+            const currentOpacity = parseFloat(e.target.style.opacity)+0.1
+            e.target.style.opacity = currentOpacity >=1 ? 1:currentOpacity;
             e.target.style.backgroundColor ="black"
+            //e.target.style.backgroundColor =`rgb(${randomRBGColumn()},${randomRBGColumn()},${randomRBGColumn()})`
+           
         })
         //console.log(gridSquare.style.width);
         containerDiv.appendChild(gridSquare)
@@ -23,6 +28,10 @@ function drawGrid(gridSquareNumber){
 }
 
 drawGrid(16);
+
+function randomRBGColumn(){
+    return  Math.floor(Math.random()*255) +1
+}
 
 newGridButton.addEventListener("click", (e) => {
     const gridSquareNumber = +prompt("Enter Side Square Number:")
