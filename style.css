@@ -1,0 +1,25 @@
+body{
+    box-sizing: border-box;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 90vw;
+    margin: auto;
+    justify-content: center;
+    background-color: antiquewhite;
+    height: 100%;
+}
+.square{
+    border: 1px grey solid;
+    margin: 0;
+}
+.btn-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+#newGridButton{
+    margin: 2rem auto;
+}
